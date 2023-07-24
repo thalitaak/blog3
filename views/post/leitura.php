@@ -17,6 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= Html::encode($model->conteudo) ?>
 
-   
+<?php 
+print_r($model->getComentarios());   
+?>
 
 </div>
