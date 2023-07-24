@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\models\Post;
+
+use app\models\comentarios;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -65,6 +67,9 @@ class PostController extends Controller
      */
     public function actionLeitura($id)
     {
+
+        $model = $this->findModel($id);
+
         return $this->render('leitura', [
             'model' => $this->findModel($id),
         ]);
