@@ -17,8 +17,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= Html::encode($model->conteudo) ?>
 
-<?php 
-print_r($model->getComentarios());   
-?>
+    <br><br>
+
+    <?php
+
+
+    $comentarios = $model->comentarios;
+
+    foreach ($comentarios as $comentario) {
+
+
+        echo $comentario->nome . '<br><br>';
+
+        echo $comentario->comentario;
+    }
+
+
+    ?>
 
 </div>

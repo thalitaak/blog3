@@ -71,7 +71,7 @@ class PostController extends Controller
         $model = $this->findModel($id);
 
         return $this->render('leitura', [
-            'model' => $this->findModel($id),
+            'model' => $model, 
         ]);
     }
 

@@ -14,7 +14,7 @@ use Yii;
  * @property string|null $comentario
  * @property string $data
  *
- * @property Post $idpost0
+ * @property Post $post
  */
 class Comentarios extends \yii\db\ActiveRecord
 {
@@ -61,7 +61,7 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery|PostQuery
      */
-    public function getIdpost0()
+    public function getPost()
     {
         return $this->hasOne(Post::class, ['id' => 'idpost']);
     }
