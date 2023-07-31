@@ -52,6 +52,7 @@ class ComentariosController extends Controller
             */
         ]);
 
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
@@ -77,19 +78,34 @@ class ComentariosController extends Controller
      */
     public function actionCreate()
     {
-        $model = new comentarios();
+        $comentarioNovo = new comentarios();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
+
+            $comentarioNovo->load($this->request->post());
+
+
+            echo $comentarioNovo->nome;
+            echo $comentarioNovo->idpost;
+          
+
+            $comentarioNovo->save();
+
+
+
+            
+                return $this->redirect(['/post/leitura', 'id' => $comentarioNovo->idpost]);
         } else {
-            $model->loadDefaultValues();
+            $comentarioNovo->loadDefaultValues();
         }
+
+
 
         return $this->render('create', [
             'model' => $model,
         ]);
+
+        
     }
 
     /**

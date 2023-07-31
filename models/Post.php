@@ -71,4 +71,5 @@ class Post extends \yii\db\ActiveRecord
     {
         return new PostQuery(get_called_class());
     }
+
 }
