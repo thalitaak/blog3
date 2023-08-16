@@ -25,6 +25,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
@@ -34,8 +35,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
-    ]);
+        'options' => ['class' => 'navbar navbar-expand-lg bg-body-tertiary']
+    ]); 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
@@ -44,6 +45,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Post', 'url' => ['/post/index']],
             ['label' => 'Com', 'url' => ['/comentarios/index']],
             ['label' => 'Usu', 'url' => ['/usuarios/index']],
+            ['label' => 'Admin', 'url' => ['/site/adminlogin']],
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
@@ -56,6 +58,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     . '</li>'
         ]
     ]);
+    ?>
+    
+    <form class="d-flex" role="search" style="  align: right;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success bg-primary" style="color: #b0b0b0;" type="submit">Search</button>
+    </form>
+    <?php
     NavBar::end();
     ?>
 </header>
@@ -75,8 +84,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <footer id="footer" class="mt-auto py-3 bg-dark">
     <div class="container">
         <div class="row text-muted">
-            <div class="col-md-6 text-center text-md-start" style="color: #ffffff";>&copy; blog  <?= date('Y') ?></div>
-            <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
+            <div class="col-md-6 text-center text-md-start" style="color: #ffffff";>&copy; Rodape do blog.  <?= date('Y') ?></div>
+            <div class="col-md-6 text-center text-md-end"><a href="...">Admin</a></div>
         </div>
     </div>
 </footer>

@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="post-view">
 
     <h1><?= Html::encode($model->titulo) ?></h1>
+    <div style="text-align:center"><img style="margin: 20px;height: 300px; width: 60%; object-fit: cover;" src="<?= $model->imagem?>"></img></div>
 
     <?= $model->conteudo ?>
 
