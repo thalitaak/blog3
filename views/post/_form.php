@@ -13,12 +13,11 @@ use dosamigos\ckeditor\CKEditor;
 
     <?php $form = ActiveForm::begin(); ?>
 
-
     <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'imagem')->fileInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'iduser')->textInput() ?>
+    <?= $form->field($model, 'iduser')->hiddenInput()->label(false) ?>
 
     <?= $form->field($model, 'conteudo')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],

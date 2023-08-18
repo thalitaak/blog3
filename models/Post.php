@@ -35,7 +35,7 @@ class Post extends \yii\db\ActiveRecord
             [['iduser'], 'integer'],
             [['conteudo'], 'string'],
             [['titulo'], 'string', 'max' => 150],
-            [['imagem'], 'string', 'max' => 70],
+            [['imagem'], 'string', 'max' => 150],
         ];
     }
 
